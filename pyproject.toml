@@ -1,0 +1,46 @@
+[project]
+name = 'countess-variants'
+dynamic = ["version"]
+readme = "README.md"
+authors = [
+    { name = "Nick Moore", email="nick@zoic.org" },
+]
+maintainers = [
+    { name = "Nick Moore", email="nick@zoic.org" },
+]
+description = "CountESS Variant Calling Plugin"
+requires-python = ">=3.10"
+license = { text = "BSD-3-Clause" }
+classifiers = [
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Science/Research',
+    'License :: OSI Approved :: BSD License',
+    'Operating System :: OS Independent',
+    'Topic :: Scientific/Engineering :: Bio-Informatics',
+]
+dependencies = [
+    "countess>=0.0.31,<0.1",
+    "sequence_align==0.1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "countess[dev]>=0.0.31,<0.1",
+]
+
+[project.entry-points.countess_plugins]
+variants = "countess_variants:VariantsPlugin"
+
+[tool.setuptools.dynamic]
+version = { attr = "countess_variants.VERSION" }
+readme = { file = "README.md", content-type="text/markdown" }
+
+[tool.pylint]
+disable = [
+    "no-else-return",
+    "fixme",
+    "invalid-name",
+]
+
+[tool.black]
+line-length = 100
