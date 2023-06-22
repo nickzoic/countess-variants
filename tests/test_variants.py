@@ -1,4 +1,4 @@
-from variants import find_variant_string
+from countess_variants import find_variant_string
 
 def test_single_subst():
     """
