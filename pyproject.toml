@@ -31,6 +31,11 @@ dev = [
 [project.entry-points.countess_plugins]
 variants = "countess_variants:VariantsPlugin"
 
+[tool.setuptools]
+packages = [
+    'countess_variants',
+]
+
 [tool.setuptools.dynamic]
 version = { attr = "countess_variants.VERSION" }
 readme = { file = "README.md", content-type="text/markdown" }
@@ -40,6 +45,7 @@ disable = [
     "no-else-return",
     "fixme",
     "invalid-name",
+    "too-many-branches",
 ]
 
 [tool.black]
